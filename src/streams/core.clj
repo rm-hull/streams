@@ -6,7 +6,10 @@
 
 (defn sqrt-stream [x]
   (def guesses
-    (cons 1.0 (lazy-seq (map #(sqrt-improve % x) guesses))))
+    (lazy-seq
+      (cons
+        1.0
+        (map #(sqrt-improve % x) guesses))))
   guesses)
 
 ; (take 100 (sqrt-stream 2))
@@ -40,7 +43,7 @@
 ; (take 100 (euler-transform (pi-stream)))
 
 (defn make-tableau [transform s]
-  (lazy-cat
+  (lazy-seq
     (cons
       s
       (make-tableau
