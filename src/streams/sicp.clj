@@ -1,4 +1,4 @@
-(ns streams.core)
+(ns streams.sicp)
 
 ; SICP 3.5.3
 (defn sqrt-improve [guess x]
